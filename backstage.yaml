@@ -1,40 +1,24 @@
-# Sample Backstage Template YAML
-
-apiVersion: backstage.io/v1
+apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: sample-template
-title: Sample Backstage Template
-description: A template for creating a sample service in Backstage
-
+  name: hello-world-template
+  title: Hello World
+  description: Says Hello to a specified name.
 spec:
+  owner: backstage/techdocs-core
   type: service
 
-  # Define steps
+  parameters:
+    - title: You are about to say hello to your first Backstage Template
+      required:
+        - name
+      properties:
+        name:
+          type: string
+
   steps:
-    - id: create
-      name: Create Service
-      script: echo "Creating the sample service..."
-
-    - id: deploy
-      name: Deploy Service
-      script: echo "Deploying the sample service..."
-
-    - id: test
-      name: Test Service
-      script: echo "Running tests on the sample service..."
-
-    - id: publish
-      name: Publish Service
-      script: echo "Publishing the sample service..."
-
-  # Define inputs
-  inputs:
-    - type: text
-      title: Service Name
-      name: serviceName
-      description: Enter the name of the service
-    - type: text
-      title: Repository URL
-      name: repositoryUrl
-      description: Enter the repository URL
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}!'
