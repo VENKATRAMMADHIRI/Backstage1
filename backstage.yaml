@@ -4,11 +4,10 @@ apiVersion: backstage.io/v1
 kind: Location
 metadata:
   name: github-repo
-type: url
 spec:
+  type: url
   targets:
-    - https://github.com/VENKATRAMMADHIRI/Backstage1/blob/main/backstage.yaml
+    - https://github.com/VENKATRAMMADHIRI/Backstage1/blob/main/catalog-info.yaml
   rules:
     - allow:
         - template
-
