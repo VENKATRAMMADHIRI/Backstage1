@@ -1,17 +1,24 @@
-# hello-world-template.yaml
-
-apiVersion: backstage.io/v1
+apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: hello-world
-title: Hello World Template
-description: A simple Backstage template that prints "Hello, World!"
-
+  name: hello-world-template
+  title: Hello World
+  description: Says Hello to a specified name.
 spec:
-  type: website
+  owner: backstage/techdocs-core
+  type: service
 
-  # Define steps
+  parameters:
+    - title: You are about to say hello to your first Backstage Template
+      required:
+        - name
+      properties:
+        name:
+          type: string
+
   steps:
-    - id: hello
-      name: Print Hello World
-      script: echo "Hello, World!"
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.name }}!'
