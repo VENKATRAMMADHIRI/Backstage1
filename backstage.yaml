@@ -1,3 +1,23 @@
+# backstage.yaml
+
+apiVersion: backstage.io/v1
+kind: Location
+metadata:
+  name: github-repo
+type: url
+spec:
+  targets:
+    - https://github.com/VENKATRAMMADHIRI/Backstage1/blob/main/backstage.yaml
+  rules:
+    - allow:
+        - template
+
+
+
+
+
+
+
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
