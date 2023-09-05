@@ -1,0 +1,17 @@
+# hello-world-template.yaml
+
+apiVersion: backstage.io/v1
+kind: Template
+metadata:
+  name: hello-world
+title: Hello World Template
+description: A simple Backstage template that prints "Hello, World!"
+
+spec:
+  type: website
+
+  # Define steps
+  steps:
+    - id: hello
+      name: Print Hello World
+      script: echo "Hello, World!"
