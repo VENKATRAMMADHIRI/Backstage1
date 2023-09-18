@@ -2,14 +2,14 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: hello-world-template
-  title: Hello World
+  title: Hello World template
   description: Says Hello to a specified name.
 spec:
   owner: backstage/techdocs-core
   type: service
 
   parameters:
-    - title: You are about to say hello to your first Backstage Template
+    - title: You are about to say welcome to your first Backstage Template
       required:
         - name
       properties:
